@@ -16,7 +16,7 @@ import Backed from "../components/Backedsection";
 const IndexPage = () => (
   <Layout>
      <Hero />
-     <Future />
+     <Future/>
      <BankingBanner />
      <Service />
      <About />

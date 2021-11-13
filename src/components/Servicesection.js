@@ -8,7 +8,7 @@ const Service = () => (
           <h2>Private Banking no longer<br/> just for the super Rich</h2>
           <p>Why should the benefits of  Private Banking and Wealth Management be available only to the very few.<br /> Join the Bismarck family.</p>
              <ServiceBlock>
-             <Grid>
+             <Grid id="dbanking">
                 <Item>
                 <ServiceImage> <StaticImage src="../assets/images/service-1.png" alt="" /></ServiceImage>
                 </Item>
@@ -19,7 +19,7 @@ const Service = () => (
                     </TextBlock>
                 </Item>
              </Grid>
-             <Grid2>
+             <Grid2 id="cinvestments">
                 <Item2>
                 <TextBlock>
                     <SubHeading2>Curated Investments</SubHeading2>

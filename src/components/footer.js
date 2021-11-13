@@ -11,10 +11,24 @@ const Footer = () => {
            <Logo>
               <StaticImage src="../assets/images/bismarck-logo-gold.png" alt="" />
            </Logo>
+           <form
+                    name="emailsubscribe"
+                    method="POST"
+                    data-netlify="true"
+                  >
+
+                     <input type="hidden" name="form-name" value="emailsubscribe" />
            <NewsLetter>
-              <Input type="text" placeholder="Email" />
+            <Input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  id="email"
+                  required
+                  />
               <Button type="submit">Subscribe to Newsletter</Button>
            </NewsLetter>
+           </form>
         </Container>
      </FooterTop>
      <FooterBottom>
@@ -53,7 +67,7 @@ const Footer = () => {
                        </Link>
                     </li>
                     <li>
-                       <Link to="/">
+                       <Link to="/sitemamp-0.xml">
                        Sitemap
                        </Link>
                     </li>

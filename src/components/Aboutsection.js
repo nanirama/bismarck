@@ -6,7 +6,7 @@ import bgImg from "../assets/images/hero-banner.png";
 import bgImg2 from "../assets/images/about-tlt.png";
 
 const About = () => (
-    <Wrapper>
+    <Wrapper id="membership">
        <Container>
           <Heading>About Us</Heading>
           <p>Count Bismarck Modern Private Banking is fintech plattform offering unqies aceed to<br /> digital banking.  we are democratising ....</p>

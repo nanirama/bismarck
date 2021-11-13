@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import styled from "styled-components";
 
 const Backed = () => (
-  <Wrapper>
+  <Wrapper id="contact">
      <Container>
            <Heading>Backed by giants</Heading>
            <p>Our superior Next Generation Private banking provides an immense benefit into the lives of<br/> our clients’ personal and business interactions.</p>
