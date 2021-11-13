@@ -1,21 +1,41 @@
 import * as React from "react"
 import styled from "styled-components";
+import { graphql, useStaticQuery } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
 import bgImg from "../assets/images/bank-card.jpg";
 
-const Financial = () => (
-  <Wrapper>
-     <Container>
-           <Heading>WE SOLVE YOUR FINANCIAL SECURITY<br/> WITH TECHNOLOGY AND DATA,<br/> A WHOLE LOT OF DATA.</Heading>
-     </Container>
-  </Wrapper>
+const Financial = () => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        bankCardBg: file(relativePath: { eq: "bank-card.jpg" }) {
+          childImageSharp {
+            fluid(quality: 100, maxWidth: 1920) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
   )
+  const imageData = data.bankCardBg.childImageSharp.fluid
+  return(
+    <BackgroundImage
+         Tag="section"
+         fluid={imageData}
+         backgroundColor={`#040e18`}
+      >
+    <Wrapper>
+      <Container>
+            <Heading>WE SOLVE YOUR FINANCIAL SECURITY<br/> WITH TECHNOLOGY AND DATA,<br/> A WHOLE LOT OF DATA.</Heading>
+      </Container>
+    </Wrapper>
+    </BackgroundImage>
+  )
+}
   export default Financial;
     
 const Wrapper = styled.div`
-background-image: url(${bgImg});
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
 display: flex;
 flex-direction: column;
 justify-content: center;

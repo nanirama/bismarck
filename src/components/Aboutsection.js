@@ -2,11 +2,32 @@ import * as React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
-import bgImg from "../assets/images/hero-banner.png";
+import { graphql, useStaticQuery } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
 import bgImg2 from "../assets/images/about-tlt.png";
 
-const About = () => (
-    <Wrapper id="membership">
+const About = () => {
+    const data = useStaticQuery(
+        graphql`
+          query {
+            bgImg: file(relativePath: { eq: "hero-banner.png" }) {
+              childImageSharp {
+                fluid(quality: 100, maxWidth: 1920) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+        `
+      )
+      const imageData = data.bgImg.childImageSharp.fluid
+    return(
+        <BackgroundImage
+         Tag="section"
+         fluid={imageData}
+         backgroundColor={`#040e18`}
+      >
+    <Wrapper id="membership">        
        <Container>
           <Heading>About Us</Heading>
           <p>Count Bismarck Modern Private Banking is fintech plattform offering unqies aceed to<br /> digital banking.  we are democratising ....</p>
@@ -59,16 +80,14 @@ const About = () => (
              <h3>Become Part Of  The Count Bismarck Family</h3>
              <Button><Link to="/">Become a Count Bismarck Member</Link></Button>
           </AboutBlock>
-       </Container>
+       </Container>       
     </Wrapper>
+    </BackgroundImage>
     );
+}
     export default About;
         
 const Wrapper = styled.div`
-background-image: url(${bgImg});
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
 height:950px;
 padding: 70px 0;
 text-align: center;
