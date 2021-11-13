@@ -1,17 +1,40 @@
 import * as React from "react"
 import styled from "styled-components";
+import { graphql, useStaticQuery } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
 import bgImg from "../assets/images/banking-banner.png";
 
-const BankingBanner = () => (
+const BankingBanner = () => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        bankingNanneBgImg: file(relativePath: { eq: "banking-banner.png" }) {
+          childImageSharp {
+            fluid(quality: 100, maxWidth: 1200) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  )
+  const imageData = data.bankingNanneBgImg.childImageSharp.fluid
+  return(
   <Wrapper>
      <Container>
+     <BackgroundImage
+         Tag="section"
+         fluid={imageData}
+      >
         <Banner>
            <Heading>Private Banking no longer just for the<br /> super rich</Heading>
            <Paragraph>Otto Von Bismarck influence has shaped the financial industry for over 200 years. Now, we’re<br/> bringing it to the 21st century and giving you the opportunity to join the Count Bismarck famil</Paragraph>
         </Banner>
+      </BackgroundImage>
      </Container>
   </Wrapper>
   )
+}
   export default BankingBanner;
     
 const Wrapper = styled.div`
@@ -33,10 +56,6 @@ margin: 0 auto;
 padding: 0 15px;
 `;
 const Banner = styled.div`
-background-image: url(${bgImg});
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
 height: 500px;
 margin-top: -80px;
 display: flex;
