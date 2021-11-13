@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import GlobalStyle from '../layout/globalStyles';
-import FontStyles from "../layout/fontStyles";
+import FontStyles from "../layout/fontstyles";
 import Hero from "../components/Herosection";
 import Future from "../components/Futuresection";
 import BankingBanner from "../components/BankingBannersection";
