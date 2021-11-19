@@ -116,6 +116,9 @@ position: relative;
   width:800px !important;
   height: 400px;
 }
+@media only screen and (min-width:768px) and (max-width:830px){
+  width:740px !important;
+}
 @media only screen and (max-width:767px){
   max-width:100%;
 }
