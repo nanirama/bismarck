@@ -1,10 +1,10 @@
 import * as React from "react"
 import styled from "styled-components";
 import { graphql, useStaticQuery } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
-import ReactPlayer from 'react-player'
-import video from "../assets/videos/video1.mp4";
+import { SunnyMorning } from 'moving-letters'
 
+
+import video from "../assets/videos/video1.mp4";
 const BankingBanner = () => {
   const data = useStaticQuery(
     graphql`
@@ -24,33 +24,21 @@ const BankingBanner = () => {
   <Wrapper>
      <Container>
         <Banner>
-        <ReactPlayer
-            className='react-player fixed-bottom'
-            url= {video}
-            width='100%'
-            height='100%'
-            loop={true}
-            controls = {true}
-
-            />
-           {/* <Heading>Private Banking no longer just for the<br /> super rich</Heading>
-           <Paragraph>Otto Von Bismarck influence has shaped the financial industry for over 200 years. Now, we’re<br/> bringing it to the 21st century and giving you the opportunity to join the Count Bismarck famil</Paragraph>
-           <VideoText>
-           <AnchorLink href='#'>
-             <SvgIcon>
-             <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-</svg>
-</SvgIcon>
- Video Content
- </AnchorLink>
- </VideoText> */}
+        <video loop muted autoPlay width='100%' height='100%'>
+        <source src={video} type="video/mp4"/>
+        <source src={video} type="video/ogg"/>
+       </video>
+            <VideoContent>
+              <SunnyMorning text='Elegance, Precision' />
+              <SunnyMorning text='Commuity, Performance' />
+            </VideoContent>
+           
         </Banner>
      </Container>
   </Wrapper>
   )
 }
-  export default BankingBanner;
+export default BankingBanner;
     
 const Wrapper = styled.div`
 position: relative;
@@ -59,20 +47,64 @@ position: relative;
     position: absolute;
     top: 0%;
     left: 0;
-    width: 100%;
-    height: 430px;
+    width: 100%;    
     background-color: #202252;
     z-index: -1;
+    @media only screen and (min-width:768px){
+      height: 400px;
+    }
+    @media only screen and (max-width:767px){
+      height: 100%;
+    }
   }
 `;
 const Container = styled.div`
 max-width: 1170px;
 margin: 0 auto;
-padding: 0 15px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+@media only screen and (min-width:768px){
+  padding: 0 15px;
+}
+@media only screen and (max-width:767px){
+  padding: 0px;
+}
+`;
+const VideoContent = styled.div`
+position: absolute;
+left: 0; 
+right: 0; 
+margin-left: auto; 
+margin-right: auto; 
+z-index: 999 !important;
+width:65% !important;
+max-width:100%;
+h1{
+  color: #fff;
+  margin: 0;
+  font-size:3rem;
+  text-shadow: 1px 1px 6px #000000;
+  line-height: 56px;
+  @media only screen and (max-width:991px){
+    line-height: 45px;
+  }
+  @media only screen and (max-width:599px){
+    line-height: 35px;
+  }
+  @media only screen and (min-width:768px){
+    font-size:3rem;
+  }
+  @media only screen and (max-width:767px){
+    font-size:2rem;
+  }
+  @media only screen and (max-width:479px){
+    font-size:1.5rem;
+  }
+}
 `;
 const Banner = styled.div`
-height: 680px;
-margin-top: -175px;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -80,10 +112,18 @@ align-items: center;
 text-align: center;
 padding: 0px;
 position: relative;
+@media only screen and (min-width:768px){
+  width:800px !important;
+  height: 400px;
+}
+@media only screen and (max-width:767px){
+  max-width:100%;
+}
 `;
 const Heading = styled.h2`
 color: #fff;
 margin: 0;
+text-shadow: 1px 1px 6px #000000;
 line-height: 56px;
   @media only screen and (max-width:991px){
     line-height: 45px;

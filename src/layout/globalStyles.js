@@ -2,7 +2,8 @@ import { createGlobalStyle } from 'styled-components';
  
 const GlobalStyle = createGlobalStyle`
 
-body{margin:0;font-family: 'QuasimodaRegular';color: #B89260;font-weight: 400;}
+body{margin:auto; float:none; font-family: 'QuasimodaRegular';color: #B89260;font-weight: 400;
+max-width:1600px;}
 
 h1,h2,h3,h4,h5,h6{font-family: 'BaskervilleOldFace';margin:0;color: #B89260; font-weight: 400;margin-bottom:25px;}
 h1, h2{font-size:56px; line-height:64px;}
@@ -18,7 +19,10 @@ button:hover::before {opacity: 1;-webkit-transform: scale(1, 1);transform: scale
 .svg-icon {width: 1.3em;height: 1.3em; margin:0px 10px 0 0; float: left;}
 .svg-icon path {fill: #B89260;}
 
-
+.ml3 {
+    font-weight: 900;
+    font-size: 3.5em;
+  }
 @media only screen and (min-width:1101px) and (max-width:1250px){
 h4{font-size:28px; line-height:30px;}
 }
