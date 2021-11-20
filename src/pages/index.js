@@ -10,7 +10,6 @@ import Service from "../components/Servicesection";
 import About from "../components/Aboutsection";
 import Portfolio from "../components/Portfoliosection";
 import Financial from "../components/Financialsection";
-import Backed from "../components/Backedsection";
 
 const IndexPage = () => (
   <Layout>
@@ -23,7 +22,6 @@ const IndexPage = () => (
      <About />
      <Portfolio />
      <Financial />
-     <Backed />
   </Layout>
   )
   export default IndexPage  

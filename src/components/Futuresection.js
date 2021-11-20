@@ -54,7 +54,7 @@ const Future = () => (
     
 const FurureBlock = styled.div`
 background-color: #fff1e5;
-padding: 70px 0 70px 0;
+padding: 70px 0 100px 0;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -137,9 +137,9 @@ margin-bottom: 40px;
 `;
 const CardInfo = styled.div`
 position: relative;
-min-height: 225px;
-    @media only screen and (min-width:992px) and (max-width:1250px){
-        min-height: 265px;
+min-height: 252px;
+    @media only screen and (min-width:992px) and (max-width:1200px){
+        min-height: 292px;
     }
     @media only screen and (max-width:400px){
         min-height: 300px;
@@ -153,7 +153,7 @@ color: #B89260;
 font-size: 40px;
 width: 50px;
 line-height: 80px;
-bottom: 16px;
+bottom: 35px;
 background-color: #fff1e5;
     @media only screen and (max-width:767px){
         bottom: 50px;

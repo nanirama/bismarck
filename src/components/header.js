@@ -80,7 +80,7 @@ const LogoAndLinks = styled.div`
   justify-content: space-between;
   align-items: stretch;
   height: 100%;
-  padding:30px 25px 30px 15px;
+  padding:20px 25px 20px 15px;
     @media (max-width: 1200px) {
       align-items: center;
     }
@@ -88,7 +88,7 @@ const LogoAndLinks = styled.div`
 const Logo = styled.div`
   display: grid;
   place-items: center;
-  width: auto;
+  width: 40px;
 `;
 const Nav = styled.nav`
   // width: 100%;
@@ -100,7 +100,7 @@ const Nav = styled.nav`
   width: 2rem;
   height: 2rem;
   position: fixed;
-  top: 40px;
+  top:30px;
   right: 20px;
   z-index: 20;
   display: none;
