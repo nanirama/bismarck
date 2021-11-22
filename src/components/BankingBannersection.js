@@ -51,7 +51,7 @@ position: relative;
     background-color: #202252;
     z-index: -1;
     @media only screen and (min-width:768px){
-      height: 400px;
+      height: 100%;
     }
     @media only screen and (max-width:767px){
       height: 100%;
@@ -113,8 +113,8 @@ text-align: center;
 padding: 0px;
 position: relative;
 @media only screen and (min-width:768px){
-  width:800px !important;
-  height: 400px;
+  width:100% !important;
+  height: auto;
 }
 @media only screen and (min-width:768px) and (max-width:830px){
   width:740px !important;
