@@ -21,7 +21,7 @@ const IndexPage = () => (
      <Service />
      <About />
      <Portfolio />
-     <Financial />
+     {/* <Financial /> */}
   </Layout>
   )
   export default IndexPage  

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 
 const Future = () => (
-    <FurureBlock id="about">
+    <FurureBlock>
        <Container>
           <Heading>Say Hello <br /> To The Future of Private Banking</Heading>
           <p>Otto Von Bismarck's influence has shaped the financial services industry for over 150 years. Now we're bringing <br /> Private Banking into the 21st century and giving you the opportunity to join the Count Bismarck family.</p>

@@ -2,6 +2,7 @@ import * as React from "react"
 import styled from "styled-components";
 import { graphql, useStaticQuery } from 'gatsby'
 import { SunnyMorning } from 'moving-letters'
+import SunnyMorningNew from './SunnyMorningNew'
 
 
 import video from "../assets/videos/video1.mp4";
@@ -29,8 +30,8 @@ const BankingBanner = () => {
         <source src={video} type="video/ogg"/>
        </video>
             <VideoContent>
-              <SunnyMorning text='Elegance, Precision' />
-              <SunnyMorning text='Commuity, Performance' />
+              <SunnyMorningNew text='Elegance, Precision' />
+              <SunnyMorningNew text='Commuity, Performance' />
             </VideoContent>
            
         </Banner>

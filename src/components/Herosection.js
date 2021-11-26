@@ -57,6 +57,12 @@ align-items: center;
 text-align: center;
 padding-top:100px;
 padding-bottom:40px;
+@media (min-width: 992px) {
+  padding-bottom:170px; 
+}
+@media (max-width: 991px) {
+  padding-bottom:50px; 
+}
 `;
 const Logo = styled.div`
   width: auto;
