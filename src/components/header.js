@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image"
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import BgImg from '../assets/images/page-banner.png';
 
-const Header = () => {
+const Header = ({bg}) => {
+  console.log('Bg color',bg)
   const [open, setOpen] = useState(false)
   return (
-  <Wrapper>
+  <Wrapper bg={bg}>
      <Container>
         <LogoAndLinks>
            <Logo>
@@ -61,7 +63,6 @@ const Header = () => {
   export default Header;  
 
 const Wrapper = styled.div`
-
 width: 100%;
 position: absolute;
 left: 0; 
@@ -69,6 +70,11 @@ right: 0;
 margin-left: auto; 
 margin-right: auto; 
 z-index: 999 !important;
+${props => props.bg && 
+  `background-image: url(${BgImg});
+  background-repeat:no-repeat;
+  background-size:100% auto;`
+}
 `;
 const Container = styled.div`
   max-width: 1600px;
@@ -80,7 +86,7 @@ const LogoAndLinks = styled.div`
   justify-content: space-between;
   align-items: stretch;
   height: 100%;
-  padding:20px 25px 20px 15px;
+  padding:20px 25px 25px 15px;
     @media (max-width: 1200px) {
       align-items: center;
     }

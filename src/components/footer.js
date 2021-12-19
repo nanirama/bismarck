@@ -83,7 +83,7 @@ const Footer = () => {
                  </SocialIcons>
                  <Links id="f_nav">
                     <li>
-                       <Link to="/">
+                       <Link to="/legal-terms">
                        Legal terms
                        </Link>
                     </li>
