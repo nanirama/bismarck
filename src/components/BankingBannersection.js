@@ -25,7 +25,7 @@ const BankingBanner = () => {
   <Wrapper>
      <Container>
         <Banner>
-        <video playsinline loop muted autoPlay width='100%' height='100%'>
+        <video playsinline loop muted autoPlay width='100%' height='100%' preload='auto' >
         <source src={video} type="video/mp4"/>
         <source src={video} type="video/ogg"/>
        </video>
@@ -79,7 +79,7 @@ left: 0;
 right: 0; 
 margin-left: auto; 
 margin-right: auto; 
-z-index: 999 !important;
+z-index: 99 !important;
 width:65% !important;
 max-width:100%;
 h1{
