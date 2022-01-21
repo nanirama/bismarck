@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { graphql, useStaticQuery } from 'gatsby'
 import { isMobile } from 'react-device-detect';
 
+
+
 import { SunnyMorning } from 'moving-letters'
 import SunnyMorningNew from './SunnyMorningNew'
 
@@ -29,7 +31,10 @@ const BankingBanner = () => {
     if (isMobile) {
       return(
         <VideoWrapper>
-        <iframe src={`${videomp4}?autoplay=1&controls=0&loop=1`} width="100%" height="350" loop="true" allow="autoplay; encrypted-media"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <iframe src={`${videomp4}?autoplay=1&controls=0&loop=1`}
+            width="100%" height="350" loop="true" allow="autoplay; encrypted-media"
+            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>            
+          </iframe>
         </VideoWrapper>
       )
     }
@@ -45,16 +50,17 @@ const BankingBanner = () => {
   <Wrapper>
      <Container>
         <Banner>
-        {/* { isMobile && <VideoWrapper>
+        <VideoWrapper>
         <iframe src={`${videomp4}?autoplay=1&controls=0&loop=1`} width="100%" height="100%" loop="true" allow="autoplay; encrypted-media"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </VideoWrapper>
-        } */}
-        { videoRendered(isMobile) }
-        {/* <video playsinline loop muted autoPlay width='100%' height='100%' preload='yes'  >
-                <source src={videomp4} type="video/mp4"/>
-                <source src={videoogv} type="video/ogv" />
-                <source src={videowebm} type="video/webm"/>
-            </video> */}
+        <HtmlVideo>
+          <video playsinline loop muted autoPlay width='100%' height='100%' preload='yes'  >
+              <source src={videomp4} type="video/mp4"/>
+              <source src={videoogv} type="video/ogv" />
+              <source src={videowebm} type="video/webm"/>
+          </video>
+        </HtmlVideo>
+        
           {/* { isMobile ? 
           (
             <VideoWrapper>
@@ -82,7 +88,23 @@ const BankingBanner = () => {
   )
 }
 export default BankingBanner;
+const HtmlVideo = styled.div`
+padding:0px;
+margin:0px;
+@media only screen and (min-width:768px){
+  display:block !important;
+}
+@media only screen and (max-width:767px){
+  display:none !important;
+}
+` 
 const VideoWrapper = styled.div`
+@media only screen and (min-width:768px){
+  display:none !important;
+}
+@media only screen and (max-width:767px){
+  display:block !important;
+}
 border:2px solid red;
   position: relative;
   padding-bottom: 56.25%;
