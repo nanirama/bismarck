@@ -32,7 +32,8 @@ const BankingBanner = () => {
       return(
         <VideoWrapper>
           <iframe src={`${videomp4}?autoplay=1&controls=0&loop=1`}
-            width="100%" height="350" loop="true" allow="autoplay; encrypted-media"
+           width="560"
+           height="315" loop="true" allow="autoplay; encrypted-media"
             frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>            
           </iframe>
         </VideoWrapper>
@@ -49,9 +50,8 @@ const BankingBanner = () => {
   return(
   <Wrapper>
      <Container>
-        <Banner>
         <VideoWrapper>
-        <iframe src={`${videomp4}?autoplay=1&controls=0&loop=1`} width="100%" height="100%" loop="true" allow="autoplay; encrypted-media"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src={`${videomp4}?autoplay=1&controls=0&loop=1`} width="100%" loop="true" allow="autoplay; encrypted-media"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </VideoWrapper>
         <HtmlVideo>
           <video playsinline loop muted autoPlay width='100%' height='100%' preload='yes'  >
@@ -82,7 +82,6 @@ const BankingBanner = () => {
               <SunnyMorningNew text='Commuity, Performance' />
             </VideoContent> */}
            
-        </Banner>
      </Container>
   </Wrapper>
   )
@@ -105,18 +104,15 @@ const VideoWrapper = styled.div`
 @media only screen and (max-width:767px){
   display:block !important;
 }
-border:2px solid red;
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  width:100%;
-  & > iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
+position: relative !important;
+    overflow: hidden;
+    width:100% !important;
+    min-height:70vh;   
+    margin:0px !important;
+  & > iframe { 
+    min-height:70vh;   
     width: 100%;
-    height: 100%;
-    border:none !important;
+    border: 0;
   }
 `    
 const Wrapper = styled.div`
