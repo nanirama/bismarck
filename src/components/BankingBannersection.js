@@ -29,10 +29,19 @@ const BankingBanner = () => {
   <Wrapper>
      <Container>
         <Banner>
-          { isMobile ? 
+        { isMobile && <VideoWrapper>
+        <iframe src={`${videomp4}?autoplay=1&controls=0&loop=1`} width="100%" height="100%" loop="true" allow="autoplay; encrypted-media"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </VideoWrapper>
+        }
+        <video playsinline loop muted autoPlay width='100%' height='100%' preload='yes'  >
+                <source src={videomp4} type="video/mp4"/>
+                <source src={videoogv} type="video/ogv" />
+                <source src={videowebm} type="video/webm"/>
+            </video>
+          {/* { isMobile ? 
           (
             <VideoWrapper>
-            <iframe src={`${videomp4}?autoplay=1&controls=0&loop=1`} width="100%" height="349" loop="true" allow="autoplay; encrypted-media"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <iframe src={`${videomp4}?autoplay=1&controls=0&loop=1`} width="100%" height="100%" loop="true" allow="autoplay; encrypted-media"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </VideoWrapper>
           ):
           (
@@ -41,7 +50,7 @@ const BankingBanner = () => {
                 <source src={videoogv} type="video/ogv" />
                 <source src={videowebm} type="video/webm"/>
             </video>
-          )}
+          )} */}
           
         
         
@@ -57,6 +66,7 @@ const BankingBanner = () => {
 }
 export default BankingBanner;
 const VideoWrapper = styled.div`
+border:2px solid red;
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
