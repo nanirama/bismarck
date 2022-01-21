@@ -25,6 +25,22 @@ const BankingBanner = () => {
     `
   )
   const imageData = data.bankingNanneBgImg.childImageSharp.fluid
+  const videoRendered = (isMobile)=>{
+    if (isMobile) {
+      return(
+        <VideoWrapper>
+        <iframe src={`${videomp4}?autoplay=1&controls=0&loop=1`} width="100%" height="100%" loop="true" allow="autoplay; encrypted-media"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </VideoWrapper>
+      )
+    }
+    return(
+      <video playsinline loop muted autoPlay width='100%' height='100%' preload='yes'  >
+          <source src={videomp4} type="video/mp4"/>
+          <source src={videoogv} type="video/ogv" />
+          <source src={videowebm} type="video/webm"/>
+      </video>
+    )
+  }
   return(
   <Wrapper>
      <Container>
@@ -33,11 +49,12 @@ const BankingBanner = () => {
         <iframe src={`${videomp4}?autoplay=1&controls=0&loop=1`} width="100%" height="100%" loop="true" allow="autoplay; encrypted-media"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </VideoWrapper>
         } */}
-        <video playsinline loop muted autoPlay width='100%' height='100%' preload='yes'  >
+        { videoRendered(isMobile) }
+        {/* <video playsinline loop muted autoPlay width='100%' height='100%' preload='yes'  >
                 <source src={videomp4} type="video/mp4"/>
                 <source src={videoogv} type="video/ogv" />
                 <source src={videowebm} type="video/webm"/>
-            </video>
+            </video> */}
           {/* { isMobile ? 
           (
             <VideoWrapper>
