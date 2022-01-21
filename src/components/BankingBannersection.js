@@ -1,7 +1,7 @@
 import * as React from "react"
 import styled from "styled-components";
 import { graphql, useStaticQuery } from 'gatsby'
-import { isSafari } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 
 import { SunnyMorning } from 'moving-letters'
 import SunnyMorningNew from './SunnyMorningNew'
@@ -29,7 +29,7 @@ const BankingBanner = () => {
   <Wrapper>
      <Container>
         <Banner>
-          { isSafari ? 
+          { isMobile ? 
           (
             <VideoWrapper>
             <iframe src={`${videomp4}?autoplay=1&controls=0&loop=1`} width="100%" height="349" loop="true" allow="autoplay; encrypted-media"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
