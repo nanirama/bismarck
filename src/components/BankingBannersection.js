@@ -2,6 +2,7 @@ import * as React from "react"
 import styled from "styled-components";
 import { graphql, useStaticQuery } from 'gatsby'
 import { isMobile } from 'react-device-detect';
+import Video from './video'
 
 
 
@@ -40,26 +41,28 @@ const BankingBanner = () => {
       )
     }
     return(
-      <video playsinline loop muted autoPlay width='100%' height='100%' preload='yes'  >
-          <source src={videomp4} type="video/mp4"/>
-          <source src={videoogv} type="video/ogv" />
-          <source src={videowebm} type="video/webm"/>
-      </video>
+      <Video
+          src={videomp4}
+          loop
+          autoPlay
+          height="auto"
+          className="px-8"
+        />      
     )
   }
   return(
   <Wrapper>
      <Container>
-        <VideoWrapper>
+        {/* <VideoWrapper>
         <iframe src={`${videomp4}?autoplay=1&controls=0&loop=1`} width="100%" loop="true" allow="autoplay; encrypted-media"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        </VideoWrapper>
-        <HtmlVideo>
-          <video playsinline loop muted autoPlay width='100%' height='100%' preload='yes'  >
-              <source src={videomp4} type="video/mp4"/>
-              <source src={videoogv} type="video/ogv" />
-              <source src={videowebm} type="video/webm"/>
-          </video>
-        </HtmlVideo>
+        </VideoWrapper> */}
+        
+        <Video
+          src={videomp4}
+          loop
+          autoPlay
+          height="auto"
+        />    
         
           {/* { isMobile ? 
           (
